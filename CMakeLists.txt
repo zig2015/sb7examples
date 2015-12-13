@@ -1,0 +1,10 @@
+project(sb7exercise)
+cmake_minimum_required(VERSION 2.8)
+add_definitions(-D__gl_h_ -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED)
+include_directories("/Users/hippocampus/Documents/projects/sb7code/include")
+find_library(libsb7 libsb7.a "/Users/hippocampus/Documents/projects/sb7code/lib")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework CoreFoundation")
+# first
+set(FIRST_SRC first/main.cpp)
+add_executable(first ${FIRST_SRC})
+target_link_libraries(first -lglfw3 -lgl3w ${libsb7})
