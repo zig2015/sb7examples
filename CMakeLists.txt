@@ -10,3 +10,7 @@ target_link_libraries(first_app -lsb7 -lglfw3 -lgl3w)
 set(FIRST_SHADER_SRC first_shader/shader_loader.cpp first_shader/main.cpp)
 add_executable(first_shader ${FIRST_SHADER_SRC})
 target_link_libraries(first_shader -lsb7 -lglfw3 -lgl3w)
+# first triangle
+set(FIRST_TRIANGLE_SRC first_triangle/shader_loader.cpp first_triangle/main.cpp)
+add_executable(first_triangle ${FIRST_TRIANGLE_SRC})
+target_link_libraries(first_triangle -lsb7 -lglfw3 -lgl3w)
