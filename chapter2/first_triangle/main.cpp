@@ -50,8 +50,8 @@ public:
 //        glAttachShader(program, vertex_shader);
 //        glAttachShader(program, fragment_shader);
 //        glLinkProgram(program);
-        const char* vertex_shader_path = "../first_triangle/vertex.glsl";
-        const char* fragment_shader_path = "../first_triangle/fragment.glsl";
+        const char* vertex_shader_path = "../chapter2/first_triangle/vertex.glsl";
+        const char* fragment_shader_path = "../chapter2/first_triangle/fragment.glsl";
         GLuint vertex_shader = shaw::ShaderLoader::loadFromFile(vertex_shader_path, GL_VERTEX_SHADER);
         assert(vertex_shader != 0);
         GLuint fragment_shader = shaw::ShaderLoader::loadFromFile(fragment_shader_path, GL_FRAGMENT_SHADER);
