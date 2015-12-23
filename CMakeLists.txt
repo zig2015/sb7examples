@@ -25,3 +25,7 @@ target_link_libraries(update_vertex_attribute -lsb7 -lglfw3 -lgl3w)
 set(DIFFERENT_COLORED_TRIANGLE_SRC chapter3/different_colored_triangle/shader_loader.cpp chapter3/different_colored_triangle/main.cpp)
 add_executable(different_colored_triangle ${DIFFERENT_COLORED_TRIANGLE_SRC})
 target_link_libraries(different_colored_triangle -lsb7 -lglfw3 -lgl3w)
+## interface block triangle
+set(INTERFACE_BLOCK_TRIANGLE_SRC chapter3/interface_block_triangle/shader_loader.cpp chapter3/interface_block_triangle/main.cpp)
+add_executable(interface_block_triangle ${INTERFACE_BLOCK_TRIANGLE_SRC})
+target_link_libraries(interface_block_triangle -lsb7 -lglfw3 -lgl3w)
