@@ -17,6 +17,11 @@ add_executable(first_triangle ${FIRST_TRIANGLE_SRC})
 target_link_libraries(first_triangle -lsb7 -lglfw3 -lgl3w)
 
 # chapter3
+## update vertex attribute
 set(UPDATE_VERTEX_ATTRIBUTE_SRC chapter3/update_vertex_attribute/shader_loader.cpp chapter3/update_vertex_attribute/main.cpp)
 add_executable(update_vertex_attribute ${UPDATE_VERTEX_ATTRIBUTE_SRC})
 target_link_libraries(update_vertex_attribute -lsb7 -lglfw3 -lgl3w)
+## different colored triangle
+set(DIFFERENT_COLORED_TRIANGLE_SRC chapter3/different_colored_triangle/shader_loader.cpp chapter3/different_colored_triangle/main.cpp)
+add_executable(different_colored_triangle ${DIFFERENT_COLORED_TRIANGLE_SRC})
+target_link_libraries(different_colored_triangle -lsb7 -lglfw3 -lgl3w)
