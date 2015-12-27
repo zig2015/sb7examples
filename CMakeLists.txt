@@ -33,3 +33,7 @@ target_link_libraries(interface_block_triangle -lsb7 -lglfw3 -lgl3w)
 set(TRIANGLE_WITH_TESSELLATION_SRC chapter3/triangle_with_tessellation/shader_loader.cpp chapter3/triangle_with_tessellation/main.cpp)
 add_executable(triangle_with_tessellation ${TRIANGLE_WITH_TESSELLATION_SRC})
 target_link_libraries(triangle_with_tessellation -lsb7 -lglfw3 -lgl3w)
+## triangle with tessellation and geometry shader
+set(TRIANGLE_WITH_TESS_GEOMETRY_SRC chapter3/triangle_with_tess_geometry/shader_loader.cpp chapter3/triangle_with_tess_geometry/main.cpp)
+add_executable(triangle_with_tess_geometry ${TRIANGLE_WITH_TESS_GEOMETRY_SRC})
+target_link_libraries(triangle_with_tess_geometry -lsb7 -lglfw3 -lgl3w)

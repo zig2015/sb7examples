@@ -17,25 +17,29 @@ private:
     GLuint m_vao;
 public:
     virtual void startup() {
-        const char* vertex_shader_path = "../chapter3/triangle_with_tessellation/vertex.glsl";
-        const char* fragment_shader_path = "../chapter3/triangle_with_tessellation/fragment.glsl";
-        const char* tessellation_control_shader_path = "../chapter3/triangle_with_tessellation/tessellation_control.glsl";
-        const char* tessellation_evaluation_shader_path = "../chapter3/triangle_with_tessellation/tessellation_evaluation.glsl";
+        const char* vertex_shader_path = "../chapter3/triangle_with_tess_geometry/vertex.glsl";
+        const char* tessellation_control_shader_path = "../chapter3/triangle_with_tess_geometry/tessellation_control.glsl";
+        const char* tessellation_evaluation_shader_path = "../chapter3/triangle_with_tess_geometry/tessellation_evaluation.glsl";
+        const char* geometry_shader_path = "../chapter3/triangle_with_tess_geometry/geometry.glsl";
+        const char* fragment_shader_path = "../chapter3/triangle_with_tess_geometry/fragment.glsl";
         GLuint vertex_shader = shaw::ShaderLoader::loadFromFile(vertex_shader_path, GL_VERTEX_SHADER);
         assert(vertex_shader != 0);
         GLuint tessellation_control_shader = shaw::ShaderLoader::loadFromFile(tessellation_control_shader_path, GL_TESS_CONTROL_SHADER);
         assert(tessellation_control_shader != 0);
         GLuint tessellation_evaluation_shader = shaw::ShaderLoader::loadFromFile(tessellation_evaluation_shader_path, GL_TESS_EVALUATION_SHADER);
         assert(tessellation_evaluation_shader != 0);
+        GLuint geometry_shader = shaw::ShaderLoader::loadFromFile(geometry_shader_path, GL_GEOMETRY_SHADER);
+        assert(geometry_shader != 0);
         GLuint fragment_shader = shaw::ShaderLoader::loadFromFile(fragment_shader_path, GL_FRAGMENT_SHADER);
         assert(fragment_shader != 0);
-        
-        GLuint program = shaw::ShaderLoader::linkShaders(vertex_shader, tessellation_control_shader, tessellation_evaluation_shader, fragment_shader, 0);
+
+        GLuint program = shaw::ShaderLoader::linkShaders(vertex_shader, tessellation_control_shader, tessellation_evaluation_shader, geometry_shader, fragment_shader, 0);
         assert(program != 0);
         this->m_rendering_program = program;
         glDeleteShader(vertex_shader);
         glDeleteShader(tessellation_control_shader);
         glDeleteShader(tessellation_evaluation_shader);
+        glDeleteShader(geometry_shader);
         glDeleteShader(fragment_shader);
 
         glGenVertexArrays(1, &this->m_vao);
@@ -43,6 +47,7 @@ public:
 
         glPatchParameteri(GL_PATCH_VERTICES, 3);
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        glPointSize(5.0);
 
         glUseProgram(this->m_rendering_program);
     }
