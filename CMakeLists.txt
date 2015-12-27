@@ -29,3 +29,7 @@ target_link_libraries(different_colored_triangle -lsb7 -lglfw3 -lgl3w)
 set(INTERFACE_BLOCK_TRIANGLE_SRC chapter3/interface_block_triangle/shader_loader.cpp chapter3/interface_block_triangle/main.cpp)
 add_executable(interface_block_triangle ${INTERFACE_BLOCK_TRIANGLE_SRC})
 target_link_libraries(interface_block_triangle -lsb7 -lglfw3 -lgl3w)
+## triangle with tessellation
+set(TRIANGLE_WITH_TESSELLATION_SRC chapter3/triangle_with_tessellation/shader_loader.cpp chapter3/triangle_with_tessellation/main.cpp)
+add_executable(triangle_with_tessellation ${TRIANGLE_WITH_TESSELLATION_SRC})
+target_link_libraries(triangle_with_tessellation -lsb7 -lglfw3 -lgl3w)
