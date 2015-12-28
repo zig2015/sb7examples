@@ -37,3 +37,11 @@ target_link_libraries(triangle_with_tessellation -lsb7 -lglfw3 -lgl3w)
 set(TRIANGLE_WITH_TESS_GEOMETRY_SRC chapter3/triangle_with_tess_geometry/shader_loader.cpp chapter3/triangle_with_tess_geometry/main.cpp)
 add_executable(triangle_with_tess_geometry ${TRIANGLE_WITH_TESS_GEOMETRY_SRC})
 target_link_libraries(triangle_with_tess_geometry -lsb7 -lglfw3 -lgl3w)
+## triangle with fragment shader
+set(TRIANGLE_WITH_FRAGSHADER_SRC chapter3/triangle_with_fragshader/shader_loader.cpp chapter3/triangle_with_fragshader/main.cpp)
+add_executable(triangle_with_fragshader ${TRIANGLE_WITH_FRAGSHADER_SRC})
+target_link_libraries(triangle_with_fragshader -lsb7 -lglfw3 -lgl3w)
+## triangle color smooth
+set(TRIANGLE_COLOR_SMOOTH_SRC chapter3/triangle_color_smooth/shader_loader.cpp chapter3/triangle_color_smooth/main.cpp)
+add_executable(triangle_color_smooth ${TRIANGLE_COLOR_SMOOTH_SRC})
+target_link_libraries(triangle_color_smooth -lsb7 -lglfw3 -lgl3w)
